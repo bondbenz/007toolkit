@@ -152,7 +152,7 @@ def main():
     while True:
         choose = raw_input("[~] Choose an Option [1-6] : ")
 
-        if not (int(choose) in range(1, 6)):
+        if not (int(choose) in range(1, 7)):
             print "Please Choose the Right Option"
             continue
 
