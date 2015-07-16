@@ -148,33 +148,38 @@ def generator():
 def main():
     print logo
     print menu
-    choose = raw_input("[~] Choose an Option [1-6] : ")
+
     while True:
+        choose = raw_input("[~] Choose an Option [1-6] : ")
+
+        if not (int(choose) in range(1, 6)):
+            print "Please Choose the Right Option"
+            continue
 
         if choose == "1":
             ipextract()
-        if choose == "2":
+        elif choose == "2":
             Dorker()
-        if choose == "3":
+        elif choose == "3":
             generator()
-        if choose == "4":
+        elif choose == "4":
             wordlist()
-        if choose == "5":
+        elif choose == "5":
             aboutme()
-        if choose == "6":
+        elif choose == "6":
             exit()
+
         con = raw_input('Continue [Y/n] -> ')
-        if con[0].upper() == 'N':
-            exit()
-        if con[0].upper() == 'Y':
+        if len(con) == 0 or con[0].upper() == 'Y':
             main()
-        if choose < 1:
-            print "Please Choose the Right Option"
+        elif con[0].upper() == 'N':
             exit()
-        if choose > 6:
-            print "Please Choose the Right Option"
-            exit()
+        else:
+            pass
 
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print "\n\nPeace out! ;)\n  "
