@@ -60,7 +60,7 @@ def Dorker():
     sites = list()
     while page <= 150:
 
-        url = "http://www.bing.com/search?q=" + dork + "+node&go=Valider&qs=ds&form=QBRE&first=" + str(page)
+        url = "http://www.bing.com/search?q="+dork+"+node&go=Valider&qs=ds&form=QBRE&first=" + str(page)
         req = urllib2.Request(url)
         read = urllib2.urlopen(req).read()
         extract = re.findall('<div class="b_title"><h2><a href="(.*?)" h=', read)
@@ -81,7 +81,7 @@ def ipextract():
     sites = list()
     while page <= 150:
 
-        url = "http://www.bing.com/search?q=ip%3A" + ip + "+node&go=Valider&qs=ds&form=QBRE&first=" + str(page)
+        url = "http://www.bing.com/search?q=ip%3A"+ip+"+node&go=Valider&qs=ds&form=QBRE&first=" + str(page)
         req = urllib2.Request(url)
         read = urllib2.urlopen(req).read()
         extract = re.findall('<div class="b_title"><h2><a href="(.*?)" h=', read)
